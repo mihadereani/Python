@@ -65,3 +65,10 @@ for i in range(n):
             all_ingredients.append(ingredient)
 
     recipes_list.append(recipe)
+
+
+data = {'recipes_list': recipes_list, 'all_ingredients': all_ingredients}
+
+new_file_name = str(input('Enter a name for your new file??   '))
+new_file_name = open(new_file_name, 'wb')
+pickle.dump(data, new_file_name)
