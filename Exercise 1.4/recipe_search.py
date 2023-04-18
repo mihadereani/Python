@@ -33,3 +33,20 @@ def search_ingredient(data):
         for recipe in data['recipes_list']:
             if ingredient_searched in recipe['ingredients']:
                 print(recipe['name'])
+
+
+filename = str(input("Enter the filename where you've stored your recipes:  "))
+try:
+    recipes_file = open(filename, 'rb')
+    data = pickle.load(recipes_file)
+
+except FileNotFoundError:
+    print("File doesn't exist in the current directory")
+    data = {'recipes_list': [], 'all_ingredients': []}
+
+except:
+    print("An unexpected error occurred")
+    data = {'recipes_list': [], 'all_ingredients': []}
+
+else:
+    search_ingredient(data)
