@@ -52,3 +52,16 @@ else:
 finally:
     recipes_list = data['recipes_list']
     all_ingredients = data['all_ingredients']
+
+
+n = int(input('How many recipe would you like to enter?   '))
+
+for i in range(n):
+    recipe = take_recipe()
+    print(recipe)
+
+    for ingredient in recipe['ingredients']:
+        if ingredient not in all_ingredients:
+            all_ingredients.append(ingredient)
+
+    recipes_list.append(recipe)
