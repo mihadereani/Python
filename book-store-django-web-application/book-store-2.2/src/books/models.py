@@ -20,7 +20,7 @@ book_type_choices = (
 
 class Book(models.Model):
     name = models.CharField(max_length=120)
-    author_name = models.CharField(max_length=120)
+    # author_name = models.CharField(max_length=120)
     genre = models.CharField(
         max_length=12, choices=genre_choices, default='cl')
     book_type = models.CharField(
